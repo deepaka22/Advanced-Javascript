@@ -1,0 +1,16 @@
+#display{
+    /* text-align: center; */
+    /* margin-top: 5rem; */
+    font-size: 5rem;
+    font-style: italic;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    height: 400px;
+    align-items: center;
+
+}
