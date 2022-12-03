@@ -1,0 +1,44 @@
+HTML>>>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form-DOM</title>
+<!-- <script src="../DOM day1/script.js"></script> -->
+<link rel="stylesheet" href="../DOM day1/style.css">
+
+</head>
+ <body style="background-color: hwb(36 80% 0%);">
+
+  <div class="container" >
+    <p  id="demo1" ></p>   
+    <button id="display">submitt</button>
+</div>
+<script src="../DOM day1/script.js"></script>
+
+</body>
+
+</html>
+
+**********************************************************************
+Java script
+
+const a = document.getElementById('display');
+a.addEventListener('click',()=>{
+    foo().then((data)=>{
+    document.getElementById('demo1').innerHTML = data;
+
+    }).catch((er)=>{
+        console.log(er);
+    })
+
+})
+
+function foo(){
+    return new Promise(( resolve, reject)=>{
+        if (10/2 == 5 ) resolve ('yes it is')
+        else reject ('no its not');
+    })
+    }
