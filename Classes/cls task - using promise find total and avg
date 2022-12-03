@@ -1,0 +1,47 @@
+function promise1 (){
+ 
+    let a = {name:'deepak', dept:'Civil', marks:[100,100,100,100,100]}
+    return Promise.resolve(a);
+
+}
+
+
+
+ function add(){
+
+    return promise1().then((data)=>{
+
+        let b = data.marks;
+        let total = 0;
+            for (i=0;i<b.length;i++){
+                total = total + b[i]
+            }
+                
+            console.log(total);
+            
+    }).catch((er)=>{
+        console.log(er)
+    })
+
+ }
+
+ add();
+
+ function avg (){
+
+   return promise1().then((data)=>{
+        let c = data.marks;
+        let total = 0;
+            for (i=0;i<c.length;i++){
+                total = total + c[i]
+            }
+
+            console.log(total/c.length);
+
+    }).catch((er)=>{
+        console.log(er);
+    })
+
+ }
+
+ avg();
