@@ -1,0 +1,53 @@
+PUT method - to update an exisitning one 
+
+var url = "https://638ceab6d2fc4a058a637822.mockapi.io/articles";
+
+
+const newobj = {
+    name:'kolaru',
+    age:'22'
+}
+
+fetch(`${url}/10`, {
+   method: "PUT",
+   headers:{
+    "content-type":"application/json"
+   },
+   body: JSON.stringify(newobj)
+}).then((data)=>{
+    return data.json()
+}).then((data1)=>{
+    console.log(data1)}).catch((er)=>{
+    console.error(er);
+})
+
+************************************************************
+
+POST method - To upadte new records
+
+
+
+
+var url = "https://638ceab6d2fc4a058a637822.mockapi.io/articles";
+
+
+const newobj = {
+    name:'kolaru',
+    age:'22'
+}
+
+fetch(`${url}`, {
+   method: "POST",
+   headers:{
+    "content-type":"application/json"
+   },
+   body: JSON.stringify(newobj)
+}).then((data)=>{
+    return data.json()
+}).then((data1)=>{
+    console.log(data1)}).catch((er)=>{
+    console.error(er);
+})
+
+
+*****************************************************************
