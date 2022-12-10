@@ -1,7 +1,10 @@
+let a = {name:'deepak', dept:'Civil', marks:[100,100,100,100,100]}
+
+
 function promise1 (){
  
-    let a = {name:'deepak', dept:'Civil', marks:[100,100,100,100,100]}
-    return Promise.resolve(a); or
+    
+    // return Promise.resolve(a); or
     
      return new Promise((resolve, reject)=>{
 
@@ -27,12 +30,14 @@ function promise1 (){
                 total = total + b[i]
             }
                 
-            console.log(total);
+    a ['total'] = total;
+    
+     console.log(a);
             
     }).catch((er)=>{
         console.log(er)
     })
-
+a
  }
 
  add();
@@ -46,7 +51,8 @@ function promise1 (){
                 total = total + c[i]
             }
 
-            console.log(total/c.length);
+            let d = total/c.length;
+            console.log(d);
 
     }).catch((er)=>{
         console.log(er);
@@ -55,3 +61,29 @@ function promise1 (){
  }
 
  avg();
+
+ function multiply(){
+
+   return promise1().then((data)=>{
+
+    let recdata = data.marks;
+    let total1 = 1;
+
+    for (let i=0;i<recdata.length;i++){
+
+        total1 = total1* recdata[i];
+        
+    }
+
+    a['totalnumber']=total1;
+
+    console.log(a);
+
+
+}).catch((er)=>{
+    console.error(er);
+})
+
+ }
+
+ multiply();
