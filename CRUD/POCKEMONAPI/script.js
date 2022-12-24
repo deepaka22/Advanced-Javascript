@@ -1,7 +1,11 @@
 
 
 const fetchKantoPokemon = async ()=>{
+
+    try{
+
    const request =  await fetch ('https://pokeapi.co/api/v2/pokemon?limit=50');
+
    const response =  await request.json();
 
    response.results.map((ele)=>{
@@ -9,10 +13,18 @@ const fetchKantoPokemon = async ()=>{
     fetchPokemonData (ele);
 
    })
+}
+catch(er){
+
+  throw  er;
+
+}
    
 }
 
 const fetchPokemonData = async (pokemon)=>{
+
+    try{
 
     let url = pokemon.url;
 
@@ -22,7 +34,12 @@ const fetchPokemonData = async (pokemon)=>{
    renderPokemon(responseUrl);
    pagination(responseUrl);
  console.log(responseUrl);    
+}
 
+    catch(er){
+
+        throw er
+    }
 }
 
 fetchKantoPokemon()
@@ -33,7 +50,7 @@ const renderPokemon = (pokeData)=>{
 
     let allPokemonContainer = document.getElementById('poke-container');
 
-    let pokeContainer = document.createElement("div") //div will be used to hold the data/details for indiviual pokemon.{}
+    let pokeContainer = document.createElement("div") // div will be used to hold the data/details for indiviual pokemon.{}
     pokeContainer.classList.add('ui', 'card');
     pokeContainer.setAttribute('id', 'cardfomation')
 
@@ -62,36 +79,6 @@ const renderPokemon = (pokeData)=>{
     pokeContainer.append(pokeName, pokeNumber, pokeTypes, pokeMoves);   //appending all details to the pokeContainer div
     allPokemonContainer.appendChild(pokeContainer);       //appending that pokeContainer div to the main div which will                                                             hold all the pokemon cards
 }
-
-// const pagination = (pokeData1)=>{
-
-//     let footer = document.getElementById('last');
-    
-//     let anch = document.createElement('a');
-//         anch.classList.add('page-link');
-//     anch.innerText = pokeData1.id;
-//     // anch.append(li);
-
-//     let li1 = document.createElement('li');
-//      li1.classList.add("page-item" , "disabled");
-//     li1.append(anch);
-
-//     let ul = document.createElement('ul');
-//     ul.classList.add('pagination', 'justify-content-end')
-//     ul.append(li1);
-
-//     let navbar = document.createElement('nav')
-//     navbar.setAttribute('aria-label', "Page navigation example")
-//     // navbar.appendChild(ul);
-
-//     navbar.append(ul)
-
-//     footer.appendChild(navbar)
-
-
-
-
-// }
 
   
 const createTypes = (types, ul)=>{
